@@ -25,4 +25,3 @@ module.exports = {
     node: true,
   },
 };
-

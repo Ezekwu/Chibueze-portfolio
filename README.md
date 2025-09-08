@@ -31,17 +31,20 @@ A modern, responsive portfolio website built with React, TypeScript, Tailwind CS
 ### Installation
 
 1. **Clone the repository**
+
    ```bash
    git clone <your-repo-url>
    cd chibueze-portfolio
    ```
 
 2. **Install dependencies**
+
    ```bash
    npm install
    ```
 
 3. **Start the development server**
+
    ```bash
    npm run dev
    ```
@@ -94,16 +97,19 @@ src/
 ## Customization
 
 ### Styling
+
 - Modify `tailwind.config.js` to customize colors, fonts, and other design tokens
 - Update `src/index.css` for global styles
 - Use Tailwind utility classes in your components
 
 ### Content
+
 - Update page content in the respective page components
 - Modify the navigation in `src/components/Navbar.tsx`
 - Update project information in `src/pages/Projects.tsx`
 
 ### Routing
+
 - Add new routes in `src/App.tsx`
 - Create corresponding page components in `src/pages/`
 
@@ -177,4 +183,3 @@ If you have any questions or need help, please open an issue on GitHub or contac
 ---
 
 Built with ❤️ using React, TypeScript, Tailwind CSS, and Vite
-
