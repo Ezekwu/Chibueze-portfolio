@@ -22,21 +22,21 @@ export default function Navbar() {
   };
 
   return (
-    <header className="fixed z-50 top-8 left-0 right-0">
-      {/* Floating hamburger when menu is closed */}
+    <header className="h-[150px] navbar-overlay z-50 top-0 left-0 right-0 pt-8">
       {!isMenuOpen && (
         <button
           type="button"
           onClick={toggleMenu}
-          className="absolute right-8 top-[6px] outline-none w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-[0px_4px_10px_1px_#0000001A]"
+          className="md:hidden absolute z-[60] right-12 top-8 outline-none w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-[0px_4px_10px_1px_#0000001A]"
         >
           <IoMenu className="text-gray-400" />
         </button>
       )}
 
-      {/* Navigation pill when menu is open */}
       <nav
-        className={`${isMenuOpen ? 'flex' : 'hidden'} w-fit mx-auto h-[53px] md:h-[55px] bg-[#fafafaae] rounded-[100px] p-[6px] items-center justify-center gap-2 md:gap-4 text-sm md:text-base`}
+        className={`${
+          isMenuOpen ? 'flex' : 'hidden'
+        } md:flex w-fit mx-auto h-[53px] md:h-[55px] bg-[#fafafaae] rounded-[100px] p-[6px] items-center justify-center gap-2 md:gap-4 text-sm md:text-base`}
       >
         {routes.map((route) => {
           const isActive = location.pathname === route.to;
@@ -89,7 +89,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={toggleMenu}
-          className="outline-none w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-[0px_4px_10px_1px_#0000001A]"
+          className="outline-none md:hidden z-[60] w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-[0px_4px_10px_1px_#0000001A]"
         >
           <IoMenu className="text-gray-400" />
         </button>

@@ -27,3 +27,50 @@ code {
     #f2e8db 100%
   );
 }
+
+
+.blur-overlay {
+  position: fixed;
+}
+
+.blur-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(4px); 
+  -webkit-backdrop-filter: blur(4px);
+
+  mask-image: linear-gradient(
+    180deg,
+    rgba(246, 238, 231, 0) 0%,
+    #F5EDE4 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    rgba(246, 238, 231, 0) 0%,
+    #F5EDE4 100%
+  );
+}
+
+.navbar-overlay {
+  position: fixed;
+}
+
+.navbar-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+
+  mask-image: linear-gradient(
+    to bottom,
+    rgba(238, 234, 245, 0) 0%,       /* fades out before the bottom */
+  );
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 1) 0%,
+    rgba(0, 0, 0, 0) 95.57%
+  );
+}
