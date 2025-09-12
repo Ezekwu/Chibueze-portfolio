@@ -1,8 +1,8 @@
 import { createFileRoute } from '@tanstack/react-router';
-import HalfCircle from '@components/general/HalfCircle';
+import HalfCircle from '@/components/general/HalfCircle';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
-import { cn } from '@utils/helpers';
+import { cn } from '@/utils/helpers';
 
 function Home() {
   const headlineWords = [

@@ -3,11 +3,11 @@ import { createFileRoute } from '@tanstack/react-router';
 import { motion } from 'framer-motion';
 import type { Variants } from 'framer-motion';
 
-import BaseWrapper from '@components/general/BaseWrapper';
-import BottomControls from '@components/general/BottomControls';
-import ProjectCard from '@components/general/ProjectCard';
+import BaseWrapper from '@/components/general/BaseWrapper';
+import BottomControls from '@/components/general/BottomControls';
+import ProjectCard from '@/components/general/ProjectCard';
 
-import { cn } from '@utils/helpers';
+import { cn } from '@/utils/helpers';
 import { WorkType } from '@/types/enums/WorkType';
 export const Route = createFileRoute('/work')({
   component: RouteComponent,
@@ -38,8 +38,8 @@ function RouteComponent() {
   };
 
   return (
-    <div className="h-screen overflow-y-auto">
-      <BaseWrapper className="pt-[150px] pb-20">
+    <div  className="h-screen overflow-y-auto">
+      <BaseWrapper className="pt-28 md:pt-[150px] pb-24 md:pb-20">
         <h1 className="text-center max-w-[590px] mx-auto text-2xl text-gray-300 mb-10">
           <motion.div
             variants={containerVariants}
@@ -65,11 +65,17 @@ function RouteComponent() {
             ))}
           </motion.div>
         </h1>
-        <div className='max-w-[1200px] mx-auto grid sm:grid-cols-2 gap-y-4'>
+        <motion.div
+          className='max-w-[1200px] mx-auto grid sm:grid-cols-2 gap-y-2 md:gap-y-4'
+          initial={{ opacity: 0, y: 5 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.3, ease: 'easeIn' }}
+        >
           {Array.from({ length: 6 }).map((_, index) => (
             <ProjectCard key={index} />
           ))}
-        </div>
+        </motion.div>
       </BaseWrapper>
 
       <div className="blur-overlay h-[120px] md:h-[80px] w-full fixed bottom-0 left-0 flex items-center justify-center">
