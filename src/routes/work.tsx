@@ -5,6 +5,7 @@ import type { Variants } from 'framer-motion';
 
 import BaseWrapper from '@components/general/BaseWrapper';
 import BottomControls from '@components/general/BottomControls';
+import ProjectCard from '@components/general/ProjectCard';
 
 import { cn } from '@utils/helpers';
 import { WorkType } from '@/types/enums/WorkType';
@@ -38,8 +39,8 @@ function RouteComponent() {
 
   return (
     <div className="h-screen overflow-y-auto">
-      <BaseWrapper className="pt-[150px]">
-        <h1 className="text-center max-w-[590px] mx-auto text-2xl text-gray-300">
+      <BaseWrapper className="pt-[150px] pb-20">
+        <h1 className="text-center max-w-[590px] mx-auto text-2xl text-gray-300 mb-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -64,9 +65,14 @@ function RouteComponent() {
             ))}
           </motion.div>
         </h1>
+        <div className='max-w-[1200px] mx-auto grid sm:grid-cols-2 gap-y-4'>
+          {Array.from({ length: 6 }).map((_, index) => (
+            <ProjectCard key={index} />
+          ))}
+        </div>
       </BaseWrapper>
 
-      <div className="blur-overlay h-[150px] md:h-[100px] w-full fixed bottom-0 left-0 flex items-center justify-center">
+      <div className="blur-overlay h-[120px] md:h-[80px] w-full fixed bottom-0 left-0 flex items-center justify-center">
         <BottomControls
           activeWorkType={activeWorkType}
           setActiveWorkType={setActiveWorkType}

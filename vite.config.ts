@@ -21,13 +21,7 @@ export default defineConfig({
   },
   resolve: {
     alias: {
-      '@': '/src',
-      '@components': '/src/components',
-      '@routes': '/src/routes',
-      '@types': '/src/types',
-      '@utils': '/src/utils',
-      '@hooks': '/src/hooks',
-      '@assets': '/src/assets',
+      '@': path.resolve(__dirname, './src'), // now @ points to /src
     },
   },
 });
