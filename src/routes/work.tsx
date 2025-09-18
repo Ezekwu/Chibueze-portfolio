@@ -40,7 +40,7 @@ function RouteComponent() {
   return (
     <div  className="h-screen overflow-y-auto">
       <BaseWrapper className="pt-28 md:pt-[150px] pb-24 md:pb-20">
-        <h1 className="text-center max-w-[590px] mx-auto text-2xl text-gray-300 mb-10">
+        <h1 className="text-center hidden md:block max-w-[530px] mx-auto text-2xl text-gray-300 mb-10">
           <motion.div
             variants={containerVariants}
             initial="hidden"
@@ -55,7 +55,7 @@ function RouteComponent() {
                 <motion.span
                   variants={wordVariants}
                   className={cn(
-                    'inline-block leading-none',
+                    'inline-block leading-none word-spacing-tight',
                     word === 'designer' && 'text-black'
                   )}
                 >

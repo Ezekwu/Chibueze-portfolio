@@ -39,7 +39,7 @@ function Home() {
   };
 
   return (
-    <div className="relative text-center flex md:items-center md:justify-center h-screen overflow-hidden px-6">
+    <div className="relative text-center flex md:items-center md:justify-center h-[100dvh] overflow-hidden px-6">
       <h1 className="text-center text-[40px] h-fit md:text-[64px] mt-[50%] md:mt-0 text-gray-300 max-w-[1238px] mx-auto leading-[120%] tracking-tight font-normal">
         <motion.div
           variants={containerVariants}
