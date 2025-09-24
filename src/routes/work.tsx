@@ -9,6 +9,8 @@ import ProjectCard from '@/components/general/ProjectCard';
 
 import { cn } from '@/utils/helpers';
 import { WorkType } from '@/types/enums/WorkType';
+import projects from '@/utils/constants';
+
 export const Route = createFileRoute('/work')({
   component: RouteComponent,
 });
@@ -19,6 +21,10 @@ function RouteComponent() {
     "Hi", "👋", "I'm", "Chibueze,", "a", "multidisciplinary", "designer", "&",
     "bioinformatics", "enthusiast."
   ];
+
+  const filteredProjects = projects.filter(project => 
+    project.type === activeWorkType.toLowerCase()
+  );
 
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
@@ -65,17 +71,22 @@ function RouteComponent() {
             ))}
           </motion.div>
         </h1>
-        <motion.div
-          className='max-w-[1200px] mx-auto grid sm:grid-cols-2 gap-y-2 md:gap-y-4'
-          initial={{ opacity: 0, y: 5 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
-          transition={{ duration: 0.3, ease: 'easeIn' }}
-        >
-          {Array.from({ length: 6 }).map((_, index) => (
-            <ProjectCard key={index} />
-          ))}
-        </motion.div>
+        <div className='max-w-[1200px] mx-auto'>
+          <motion.div
+            key={activeWorkType} 
+            className='grid sm:grid-cols-2 gap-y-2 md:gap-y-4'
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ 
+              duration: 0.4, 
+              ease: 'easeOut'
+            }}
+          >
+            {filteredProjects.map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+          </motion.div>
+        </div>
       </BaseWrapper>
 
       <div className="blur-overlay h-[120px] md:h-[80px] w-full fixed bottom-0 left-0 flex items-center justify-center">
