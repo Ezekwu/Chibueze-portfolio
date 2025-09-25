@@ -110,18 +110,18 @@ export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkE
                exit={{ opacity: 0 }}
              />
 
-             {/* Modal Content */}
-             <motion.div
-               className="relative bg-white  shadow-sm py-4 px-6 rounded-[24px] w-full max-w-md max-h-[70vh] overflow-hidden"
-               initial={{ scale: 0.9, opacity: 0 }}
-               animate={{ scale: 1, opacity: 1 }}
-               exit={{ scale: 0.9, opacity: 0 }}
-               transition={{
-                 type: 'spring',
-                 damping: 25,
-                 stiffness: 200,
-               }}
-             >
+            {/* Modal Content */}
+            <motion.div
+              className="relative bg-white shadow-sm py-4 px-6 rounded-[24px] w-full max-w-md max-h-[70vh] flex flex-col"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{
+                type: 'spring',
+                damping: 25,
+                stiffness: 200,
+              }}
+            >
           {/* Modal Header */}
            <motion.div 
              className="flex flex-col pb-3 items-start gap-6 border-b border-grey-300 mb-6"
@@ -160,7 +160,7 @@ export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkE
            </motion.div>
 
           {/* Modal Body */}
-           <div className="overflow-y-auto">
+           <div className="flex-1 overflow-y-auto">
              <motion.div
                className="space-y-6"
                initial="hidden"

@@ -44,7 +44,7 @@ function RouteComponent() {
         <WorkExpCard activeWorkType={activeWorkType} setActiveWorkType={setActiveWorkType} />
       </motion.div>
 
-      <div className="blur-overlay z-[70] h-[120px] md:h-[80px] w-full fixed bottom-0 left-0 flex items-center justify-center">
+      <div className="blur-overlay  z-[70] h-[120px] md:h-[80px] w-full fixed bottom-0 left-0 flex items-center justify-center">
         <BottomControls
           activeWorkType={activeWorkType}
           setActiveWorkType={setActiveWorkType}
