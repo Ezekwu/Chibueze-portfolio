@@ -12,19 +12,15 @@ interface WorkExpCardProps {
 
 export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkExpCardProps) {
   
-  // Prevent body scroll when modal is open (mobile only)
   useEffect(() => {
-    const isMobile = window.innerWidth < 768; // md breakpoint is 768px
+    const isMobile = window.innerWidth < 768; 
     
     if (activeWorkType !== '' && isMobile) {
-      // Disable scrolling on mobile
       document.body.style.overflow = 'hidden';
     } else {
-      // Re-enable scrolling
       document.body.style.overflow = 'unset';
     }
 
-    // Cleanup function to restore scrolling when component unmounts
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -97,7 +93,7 @@ export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkE
        <AnimatePresence>
          {activeWorkType !== '' && (
            <motion.div
-             className="md:hidden fixed top-0 inset-0 flex items-center justify-center p-4 z-20"
+             className="md:hidden fixed top-0 inset-0 flex items-center justify-center p-4 z-[60]"
              aria-modal="true"
              role="dialog"
              initial={{ opacity: 0 }}
