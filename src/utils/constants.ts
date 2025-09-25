@@ -19,6 +19,14 @@ export type Project = {
   type: ProjectType;
 };
 
+export type WorkExperience = {
+  id: number;
+  name: string;
+  duration: string;
+  location: string;
+  type: ProjectType;
+};
+
 const projects: Project[] = [
   {
     id: 1,

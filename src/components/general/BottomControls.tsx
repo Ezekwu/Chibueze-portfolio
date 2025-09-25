@@ -4,8 +4,8 @@ import { motion } from 'framer-motion';
 import { cn } from "@/utils/helpers";
 
 interface BottomControlsProps {
-  activeWorkType: WorkType;
-  setActiveWorkType: (workType: WorkType) => void;
+  activeWorkType: WorkType | string;
+  setActiveWorkType: (workType: WorkType | string) => void;
 }
 
 const workTypes = [
@@ -24,14 +24,14 @@ const workTypes = [
 ];
 
 export default function BottomControls({ activeWorkType, setActiveWorkType }: BottomControlsProps) {
-  function isActive(workType: WorkType) {
+  function isActive(workType: WorkType | string) {
     return activeWorkType === workType;
   }
   
   return (
     <nav
       className={cn(
-        "z-10 w-fit mx-auto h-[53px] md:h-[55px] bg-[#fafafaae] rounded-[100px] p-[6px] items-center justify-center gap-2 md:gap-4 text-sm md:text-base flex"
+        "z-10 w-fit mx-auto h-[53px] md:h-[55px] bg-[#fafafaae] rounded-[100px] p-[6px] items-center justify-center gap-2 md:gap-4 text-sm md:text-base flex "
       )}
     >
       {workTypes.map((workType) => (

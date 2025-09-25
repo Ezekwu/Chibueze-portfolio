@@ -17,7 +17,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
         <img
           src={project.image}
           alt={project.name}
-          className="w-full h-full object-cover object-[top_70%] rounded-[16px] md:rounded-[28px]"
+          className="w-full h-full object-cover object-[top_70%] rounded-[16px] md:rounded-[28px] bg-gray-100"
         />
         <div className="absolute bottom-0 left-0 w-full bg-white rounded-[20px] md:p-6 p-4">
           <h3 className="md:text-[22px] font-semibold text-[#404040] mb-4">

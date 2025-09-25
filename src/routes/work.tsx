@@ -16,7 +16,7 @@ export const Route = createFileRoute('/work')({
 });
 
 function RouteComponent() {
-  const [activeWorkType, setActiveWorkType] = useState(WorkType.Product);
+  const [activeWorkType, setActiveWorkType] = useState(WorkType.Product as string);
   const textWords = [
     "Hi", "👋", "I'm", "Chibueze,", "a", "multidisciplinary", "designer", "&",
     "bioinformatics", "enthusiast."

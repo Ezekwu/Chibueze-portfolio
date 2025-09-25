@@ -50,6 +50,7 @@ export default function Navbar() {
               <Link
                 to={route.to}
                 key={route.label}
+                disabled={!isMenuOpen}
                 className="relative h-[40px] md:h-[43px] px-2 md:px-3 flex items-center text-sm md:text-base text-gray-300 hover:text-gray-400 transition-colors rounded-[100px] whitespace-nowrap"
               >
                 <span className="relative z-10 flex items-center">
