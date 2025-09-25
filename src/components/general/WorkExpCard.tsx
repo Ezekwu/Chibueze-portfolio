@@ -4,7 +4,6 @@ import { IoClose } from 'react-icons/io5';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { WorkType } from '@/types/enums/WorkType';
-import { cn } from '@/utils/helpers';
 
 interface WorkExpCardProps {
   activeWorkType: WorkType | string;
