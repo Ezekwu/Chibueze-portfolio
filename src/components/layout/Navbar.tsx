@@ -1,9 +1,10 @@
 import { Link, useRouterState } from '@tanstack/react-router';
-import { useState } from 'react';
+import {  useState } from 'react';
 
 import type { FileRouteTypes } from '../../routeTree.gen';
 import { motion } from 'framer-motion';
 import { cn } from '@/utils/helpers';
+import { useIsMobile } from '@/hooks/useIsMobile';
 
 type RoutePath = FileRouteTypes['fullPaths'];
 
@@ -16,10 +17,13 @@ const routes: { label: string; to: RoutePath; activeEmoji: string }[] = [
 export default function Navbar() {
   const location = useRouterState({ select: (s) => s.location });
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
+  const isMobile = useIsMobile();
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  
+
 
   return (
     <header className="h-[150px] navbar-overlay z-50 top-0 left-0 right-0 pt-8 px-4 ">
@@ -50,7 +54,7 @@ export default function Navbar() {
               <Link
                 to={route.to}
                 key={route.label}
-                disabled={!isMenuOpen}
+                disabled={ !isMenuOpen && isMobile }
                 className="relative h-[40px] md:h-[43px] px-2 md:px-3 flex items-center text-sm md:text-base text-gray-300 hover:text-gray-400 transition-colors rounded-[100px] whitespace-nowrap"
               >
                 <span className="relative z-10 flex items-center">
