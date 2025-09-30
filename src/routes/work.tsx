@@ -9,7 +9,7 @@ import ProjectCard from '@/components/general/ProjectCard';
 
 import { cn } from '@/utils/helpers';
 import { WorkType } from '@/types/enums/WorkType';
-import projects from '@/utils/constants';
+import { projects } from '@/utils/constants';
 
 export const Route = createFileRoute('/work')({
   component: RouteComponent,

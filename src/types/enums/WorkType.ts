@@ -1,5 +1,5 @@
 export enum WorkType {
-  Product = 'Product',
-  Brand = 'Brand',
-  Graphic = 'Graphic',
+  Product = 'product',
+  Brand = 'brand',
+  Graphic = 'graphic',
 }

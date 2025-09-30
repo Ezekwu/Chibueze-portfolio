@@ -80,7 +80,7 @@ export default function Navbar() {
                       {route.activeEmoji}
                     </motion.span>
                   </motion.div>
-                  <span className="md:ml-2">{route.label}</span>
+                  <span className="md:ml-2 tracking-[-0.04em]">{route.label}</span>
                 </span>
                 {isActive && (
                   <motion.div

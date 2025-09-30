@@ -39,7 +39,7 @@ function RouteComponent() {
   const contactLinks = [
     {
       name: 'nwajiiugo',
-      href: 'https://instagram.com/yourhandle',
+      href: 'https://www.instagram.com/nwajiiugo',
       icon: InstaIcon,
     },
     {
@@ -49,7 +49,7 @@ function RouteComponent() {
     },
     {
       name: 'Chibueze Uchegbu',
-      href: 'https://linkedin.com/in/chibueze-uchegbu',
+      href: 'https://www.linkedin.com/in/chibueze-uchegbu-748268237',
       icon: LinkedinIcon,
     },
 

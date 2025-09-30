@@ -4,6 +4,7 @@ import { IoClose } from 'react-icons/io5';
 
 import { motion, AnimatePresence } from 'framer-motion';
 import { WorkType } from '@/types/enums/WorkType';
+import { workExperiences } from '@/utils/constants';
 
 interface WorkExpCardProps {
   activeWorkType: WorkType | string;
@@ -54,6 +55,7 @@ export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkE
           />
         </motion.div>
         <motion.div
+          key={activeWorkType}
           className="mt-6 grid gap-6"
           initial="hidden"
           animate="visible"
@@ -68,7 +70,7 @@ export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkE
             },
           }}
         >
-          {Array.from({ length: 6 }).map((_, index) => (
+          {workExperiences.filter(workExperience => workExperience.type === activeWorkType).map((workExperience, index) => (
             <motion.div
               key={index}
               variants={{
@@ -80,10 +82,10 @@ export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkE
               }}
             >
               <h4 className="text-gray-500 text-xl mb-3 font-medium">
-                WishWeaver
+                {workExperience.name}
               </h4>
               <p className="text-sm text-gray-400">
-                March 2025 - Present \ United Kingdom.
+                {workExperience.duration} \ {workExperience.location}.
               </p>
             </motion.div>
           ))}
@@ -151,17 +153,13 @@ export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkE
                  </span>
                </a>
              </div>
-             <motion.div
-               className="absolute bottom-0 left-0 h-px bg-gray-200 w-full"
-               initial={{ width: 0 }}
-               animate={{ width: '100%' }}
-               transition={{ duration: 1.2, ease: 'easeInOut', delay: 0.2 }}
-             />
+            
            </motion.div>
 
           {/* Modal Body */}
            <div className="flex-1 overflow-y-auto">
              <motion.div
+               key={activeWorkType}
                className="space-y-6"
                initial="hidden"
                animate="visible"
@@ -176,7 +174,7 @@ export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkE
                  },
                }}
              >
-               {Array.from({ length: 6 }).map((_, index) => (
+               {workExperiences.filter(workExperience => workExperience.type === activeWorkType).map((workExperience, index) => (
                  <motion.div
                    key={index}
                    variants={{
@@ -189,10 +187,10 @@ export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkE
                    className="pb-4 border-b border-gray-100 last:border-b-0"
                  >
                    <h4 className="text-gray-500 text-xl mb-3 font-medium">
-                     WishWeaver
+                     {workExperience.name}
                    </h4>
                    <p className="text-sm text-gray-400">
-                     March 2025 - Present \ United Kingdom.
+                     {workExperience.duration} \ {workExperience.location}.
                    </p>
                  </motion.div>
                ))}
