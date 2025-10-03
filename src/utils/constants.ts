@@ -194,3 +194,17 @@ export const workExperiences: WorkExperience[] = [
     type: 'brand'
   },
 ];
+
+
+export const resumes = [
+  {
+    id: 1,
+    type: 'product',
+    url: '/Chibueze-Samuel-Uchegbu-Product-Design Portfolio.pdf'
+  },
+  {
+    id: 2,
+    type: 'brand',
+    url: '/Chibueze-Brand-and-Graphic-Resume.pdf'
+  },
+]

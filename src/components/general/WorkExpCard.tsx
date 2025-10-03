@@ -13,6 +13,19 @@ interface WorkExpCardProps {
 
 export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkExpCardProps) {
   
+  // Function to get the appropriate resume URL based on activeWorkType
+  const getResumeUrl = (workType: WorkType | string) => {
+    switch (workType) {
+      case 'product':
+        return '/Chibueze-Samuel-Uchegbu-Product-Design Portfolio.pdf';
+      case 'brand':
+      case 'graphic':
+        return '/Chibueze-Brand-and-Graphic-Resume.pdf';
+      default:
+        return '#';
+    }
+  };
+
   useEffect(() => {
     const isMobile = window.innerWidth < 768; 
     
@@ -38,10 +51,12 @@ export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkE
         >
           <h3 className="text-gray-400 ">Work Experience</h3>
           <a
-            href="#"
+            href={getResumeUrl(activeWorkType)}
+            target="_blank"
+            rel="noopener noreferrer"
             className="group flex items-center gap-2 text-gray-400 hover:text-gray-500 bg-[#F6F5F6] py-2 px-3 rounded-[100px] transition-colors duration-100 ease-in text-sm"
           >
-            View full product design resume{' '}
+            View full resume{' '}
             <span className="relative inline-flex w-5 h-5 overflow-hidden">
               <GoArrowRight className="w-5 h-5 absolute left-0 top-0 transition-transform duration-300 ease-out group-hover:translate-x-5" />
               <GoArrowRight className="w-5 h-5 absolute left-0 top-0 -translate-x-5 transition-transform duration-300 ease-out group-hover:translate-x-0" />
@@ -143,10 +158,12 @@ export default function WorkExpCard({ activeWorkType, setActiveWorkType }: WorkE
              </div>
              <div>
                <a
-                 href="#"
+                 href={getResumeUrl(activeWorkType)}
+                 target="_blank"
+                 rel="noopener noreferrer"
                  className="group flex items-center justify-center gap-2 text-gray-400 hover:text-gray-500 bg-[#F6F5F6] py-2 px-3 rounded-[100px] transition-colors duration-100 ease-in text-sm"
                >
-                 View full product design resume{' '}
+                 View full resume{' '}
                  <span className="relative inline-flex w-4 h-4 overflow-hidden">
                    <GoArrowRight className="w-4 h-4 absolute left-0 top-0 transition-transform duration-300 ease-out group-hover:translate-x-4" />
                    <GoArrowRight className="w-4 h-4 absolute left-0 top-0 -translate-x-4 transition-transform duration-300 ease-out group-hover:translate-x-0" />
