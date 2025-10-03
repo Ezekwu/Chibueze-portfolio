@@ -33,7 +33,8 @@ export const projects: Project[] = [
     name: "Redesigning WishWeaver's website",
     description: 'An e-card gifting website to celebrate your friends, lovers and coworkers in style. Worked with a team of engineers to bring this to life!',
     image: WishWeaver,
-    website: 'https://mywishweaver.com/',
+    website: '#',
+    // 'https://mywishweaver.com/',
     caseStudy: 'https://www.figma.com/design/R2FYKCxmxrlPIudOSyoP2M/Portfolio-project?node-id=3179-3958&t=8erJp2ZO6SkFnCTD-4',
     type: 'product'
   },
