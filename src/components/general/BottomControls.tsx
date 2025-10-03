@@ -6,6 +6,7 @@ import { cn } from "@/utils/helpers";
 interface BottomControlsProps {
   activeWorkType: WorkType | string;
   setActiveWorkType: (workType: WorkType | string) => void;
+  isWorkPage?: boolean;
 }
 
 const workTypes = [
@@ -23,9 +24,18 @@ const workTypes = [
   },
 ];
 
-export default function BottomControls({ activeWorkType, setActiveWorkType }: BottomControlsProps) {
+export default function BottomControls({ activeWorkType, setActiveWorkType, isWorkPage = false }: BottomControlsProps) {
   function isActive(workType: WorkType | string) {
     return activeWorkType === workType;
+  }
+
+  function handleWorkTypeClick(workType: WorkType | string) {
+    if (isWorkPage && workType === WorkType.Graphic) {
+      // Navigate to Google Drive folder for graphic work (only on work page)
+      window.open('https://drive.google.com/drive/u/0/folders/1HaapqjnNHxYzWxZf8mGBQtfUGvrwUMzZ', '_blank');
+    } else {
+      setActiveWorkType(workType);
+    }
   }
   
   return (
@@ -37,7 +47,7 @@ export default function BottomControls({ activeWorkType, setActiveWorkType }: Bo
       {workTypes.map((workType) => (
         <button
           key={workType.value}
-          onClick={() => setActiveWorkType(workType.value)}
+          onClick={() => handleWorkTypeClick(workType.value)}
           className="relative h-[40px] md:h-[43px] px-2 md:px-3 flex items-center text-gray-300 hover:text-gray-400 transition-colors rounded-[100px] whitespace-nowrap"
         >
           <span className="relative z-10 flex items-center">

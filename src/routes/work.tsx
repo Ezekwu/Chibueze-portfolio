@@ -74,7 +74,7 @@ function RouteComponent() {
         <div className='max-w-[1200px] mx-auto'>
           <motion.div
             key={activeWorkType} 
-            className='grid sm:grid-cols-2 gap-y-2 md:gap-y-4'
+            className='grid sm:grid-cols-2 gap-4 md:gap-6'
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ 
@@ -93,6 +93,7 @@ function RouteComponent() {
         <BottomControls
           activeWorkType={activeWorkType}
           setActiveWorkType={setActiveWorkType}
+          isWorkPage={true}
         />
       </div>
     </div>
