@@ -29,6 +29,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <div className="flex justify-between items-center">
             <a
               href={project.caseStudy || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
               className={
                 cn(
                   "text-gray-400 hover:text-gray-500 transition-colors duration-100 ease-in text-xs underline",
@@ -40,6 +42,8 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             </a>
             <a
               href={project.type === 'brand' ? project.fullBrandDesign || '#' : project.website || '#'}
+              target="_blank"
+              rel="noopener noreferrer"
               className={
                 cn(
                   "group flex items-center gap-2 text-[#A4A4A4] hover:text-gray-400 transition-colors text-xs font-normal bg-[#F6F5F6] rounded-[100px] py-2 px-3",
