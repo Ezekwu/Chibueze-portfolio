@@ -9,7 +9,7 @@ import { useIsMobile } from '@/hooks/useIsMobile';
 type RoutePath = FileRouteTypes['fullPaths'];
 
 const routes: { label: string; to: RoutePath; activeEmoji: string }[] = [
-  { label: 'Work stuff', to: '/work', activeEmoji: '🗂️' },
+  { label: 'Work stuff', to: '/', activeEmoji: '🗂️' },
   { label: 'About me', to: '/about', activeEmoji: '👦🏾' },
   { label: 'Contact me', to: '/contact', activeEmoji: '📞' },
 ];

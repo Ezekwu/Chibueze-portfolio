@@ -5,6 +5,8 @@ import TONForge from '@/assets/images/ton-forge.png';
 import ELI from '@/assets/images/eli.png';
 import Ijoba from '@/assets/images/ijoba.png';
 import GriffyBakes from '@/assets/images/griffy-bakes.png';
+import HyperFxVideo from '@/assets/videos/HyperFX videp.mp4';
+import EzekwuJerryVideo from '@/assets/videos/Ezekwu Jerry Video.mp4';
 
 export type ProjectType = 'product' | 'brand' | 'graphic';
 
@@ -12,7 +14,8 @@ export type Project = {
   id: number;
   name: string;
   description: string;
-  image: string;
+  image?: string;
+  video?: string;
   website?: string;
   caseStudy?: string;
   fullBrandDesign?: string;
@@ -28,6 +31,26 @@ export type WorkExperience = {
 };
 
 export const projects: Project[] = [
+  {
+    id: 8,
+    name: "Designing HyperFX's website",
+    description:
+      'An onchain FX settlement engine that swaps currencies instantly and settles in seconds—no pre-funded float, no delays, and no hidden fees. Worked with a team of engineers to bring this to life!',
+    video: HyperFxVideo,
+    website: '#',
+    caseStudy: '#',
+    type: 'product',
+  },
+  {
+    id: 9,
+    name: 'Ezekwu Jeremiah',
+    description:
+      'A personal portfolio showcasing his experience as a frontend engineer building complete, data-driven applications. Worked with him to bring this to life!',
+    video: EzekwuJerryVideo,
+    website: '#',
+    caseStudy: '#',
+    type: 'product',
+  },
   {
     id: 1,
     name: "Redesigning WishWeaver's website",

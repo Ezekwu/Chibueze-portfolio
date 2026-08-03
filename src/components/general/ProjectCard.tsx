@@ -14,11 +14,23 @@ export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="h-[319px] md:h-[531px] w-full p-[5px] rounded-[20px] md:rounded-[32px] border border-[#ffffff9e] backdrop-blur-[26.32px] shadow-[2px_3px_40.3px_-10px_#FFFFFFBF]">
       <div className="relative w-full h-full">
-        <img
-          src={project.image}
-          alt={project.name}
-          className="w-full h-full object-cover object-[top_70%] rounded-[16px] md:rounded-[28px] bg-gray-100"
-        />
+        {project.video ? (
+          <video
+            src={project.video}
+            className="w-full h-full object-cover object-[top_70%] rounded-[16px] md:rounded-[28px] bg-gray-100"
+            autoPlay
+            muted
+            loop
+            playsInline
+            aria-label={project.name}
+          />
+        ) : (
+          <img
+            src={project.image}
+            alt={project.name}
+            className="w-full h-full object-cover object-[top_70%] rounded-[16px] md:rounded-[28px] bg-gray-100"
+          />
+        )}
         <div className="absolute bottom-0 left-0 w-full bg-white rounded-[20px] md:p-6 p-4">
           <h3 className="md:text-[22px] font-semibold text-[#404040] mb-4">
             {project.name}
