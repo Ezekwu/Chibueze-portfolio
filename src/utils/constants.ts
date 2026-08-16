@@ -37,7 +37,7 @@ export const projects: Project[] = [
     description:
       'An onchain FX settlement engine that swaps currencies instantly and settles in seconds—no pre-funded float, no delays, and no hidden fees. Worked with a team of engineers to bring this to life!',
     video: HyperFxVideo,
-    website: '#',
+    website: 'https://hyperfx.finance/',
     caseStudy: '#',
     type: 'product',
   },
@@ -47,7 +47,7 @@ export const projects: Project[] = [
     description:
       'A personal portfolio showcasing his experience as a frontend engineer building complete, data-driven applications. Worked with him to bring this to life!',
     video: EzekwuJerryVideo,
-    website: '#',
+    website: 'https://www.ezekwu.site/',
     caseStudy: '#',
     type: 'product',
   },

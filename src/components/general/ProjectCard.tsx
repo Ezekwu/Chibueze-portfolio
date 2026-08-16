@@ -13,11 +13,11 @@ export default function ProjectCard({ project }: ProjectCardProps) {
 
   return (
     <article className="h-[319px] md:h-[531px] w-full p-[5px] rounded-[20px] md:rounded-[32px] border border-[#ffffff9e] backdrop-blur-[26.32px] shadow-[2px_3px_40.3px_-10px_#FFFFFFBF]">
-      <div className="relative w-full h-full">
+      <div className="relative w-full h-full overflow-hidden rounded-[16px] md:rounded-[28px]">
         {project.video ? (
           <video
             src={project.video}
-            className="w-full h-full object-cover object-[top_70%] rounded-[16px] md:rounded-[28px] bg-gray-100"
+            className="w-full h-[calc(100%+40px)] -translate-y-16 object-cover object-top rounded-[16px] md:rounded-[28px] bg-gray-100"
             autoPlay
             muted
             loop
@@ -43,34 +43,37 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               href={project.caseStudy || '#'}
               target="_blank"
               rel="noopener noreferrer"
-              className={
-                cn(
-                  "text-gray-400 hover:text-gray-500 transition-colors duration-100 ease-in text-xs underline",
-                  isLinkDisabled(project.caseStudy || '#') && 'pointer-events-none opacity-30'
-                )
-              }
+              className={cn(
+                'text-gray-400 hover:text-gray-500 transition-colors duration-100 ease-in text-xs underline',
+                isLinkDisabled(project.caseStudy || '#') &&
+                  'pointer-events-none opacity-30'
+              )}
             >
-              {project.type === 'brand' ? 'See full brand design' : 'View link in figma'}
+              {project.type === 'brand'
+                ? 'See full brand design'
+                : 'View link in figma'}
             </a>
             <a
-              href={project.type === 'brand' ? project.fullBrandDesign || '#' : project.website || '#'}
+              href={
+                project.type === 'brand'
+                  ? project.fullBrandDesign || '#'
+                  : project.website || '#'
+              }
               target="_blank"
               rel="noopener noreferrer"
-              className={
-                cn(
-                  "group flex items-center gap-2 text-[#A4A4A4] hover:text-gray-400 transition-colors text-xs font-normal bg-[#F6F5F6] rounded-[100px] py-2 px-3",
-                  isLinkDisabled(project.type === 'brand'? project.fullBrandDesign  || '#' : project.website || '#') && 'pointer-events-none opacity-40'
-                )
-              }
+              className={cn(
+                'group flex items-center gap-2 text-[#A4A4A4] hover:text-gray-400 transition-colors text-xs font-normal bg-[#F6F5F6] rounded-[100px] py-2 px-3',
+                isLinkDisabled(
+                  project.type === 'brand'
+                    ? project.fullBrandDesign || '#'
+                    : project.website || '#'
+                ) && 'pointer-events-none opacity-40'
+              )}
             >
               {project.type === 'brand' ? 'View brand' : 'View site'}
               <span className="relative inline-flex w-5 h-5 overflow-hidden">
-                <GoArrowRight
-                  className="w-5 h-5 absolute left-0 top-0 transition-transform duration-300 ease-out group-hover:translate-x-5"
-                />
-                <GoArrowRight
-                  className="w-5 h-5 absolute left-0 top-0 -translate-x-5 transition-transform duration-300 ease-out group-hover:translate-x-0"
-                />
+                <GoArrowRight className="w-5 h-5 absolute left-0 top-0 transition-transform duration-300 ease-out group-hover:translate-x-5" />
+                <GoArrowRight className="w-5 h-5 absolute left-0 top-0 -translate-x-5 transition-transform duration-300 ease-out group-hover:translate-x-0" />
               </span>
             </a>
           </div>
