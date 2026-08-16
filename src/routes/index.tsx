@@ -3,10 +3,13 @@ import { useState } from 'react';
 import WorkSection from '@/components/general/WorkSection';
 import { Preloader } from '@/components/general/Preloader';
 
+let hasShownPreloader = false;
+
 function Home() {
-  const [showPreloader, setShowPreloader] = useState(true);
+  const [showPreloader, setShowPreloader] = useState(() => !hasShownPreloader);
 
   function handlePreloaderComplete() {
+    hasShownPreloader = true;
     setShowPreloader(false);
   }
 
